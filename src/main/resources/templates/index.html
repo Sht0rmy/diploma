@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комп'ютерні комплектуючі</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="login-register">
+                <a href="/cabinet"><i class="fas fa-user"></i></a><a href="/login">Логін/Реєстрація</a>
+            </div>
+            <div class="phone">
+                <i class="fas fa-phone-alt"></i> +380947685198
+            </div>
+            <div class="email">
+                <i class="far fa-envelope"></i> info@gmail.com
+            </div>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-google"></i></a>
+            </div>
+        </div>
+    </header>
+    <div class="menu-bar">
+        <ul>
+            <li><a href="/">Головна</a></li>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">Контакти</a></li>
+            <li><a href="#">Новинки</a></li>
+        </ul>
+        <button><a class="basket" href="/basket">Оформити замовлення</a></button>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel slick-initialized slick-slider slick-dotted" id="carousel">
+
+        </div>
+    </div>
+    <div class="category-block" id="category-block">
+        <div class="category-header">
+            <h2>Категорії</h2>
+            <div class="search-box">
+                <input type="text" id="search" placeholder="пошук..." size="20">
+            </div>
+        </div>
+        <div class="categories" id="categories">
+        </div>
+    </div>
+    <div class="popular-block" id="popular-block">
+        <div class="popular-header">
+            <h2>Популярне</h2>
+        </div>
+        <div class="product-cards" id="product-cards-first">
+
+        </div>
+        <div class="product-cards" id="product-cards-second">
+
+        </div>
+    </div>
+    <div class="advantages-container">
+        <div class="advantage">
+            <i class="fas fa-shipping-fast"></i>
+            <p>Швидка доставка</p>
+        </div>
+        <div class="advantage">
+            <i class="fas fa-star"></i>
+            <p>Найвища якість</p>
+        </div>
+        <div class="advantage">
+            <i class="fas fa-tools" ></i>
+            <p style="padding-left:25px;">Гарантія та ремонт</p>
+        </div>
+        <div class="advantage">
+            <i class="fas fa-tags"></i>
+            <p>Приємна ціна</p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p class="copyright">2024 всі права захищені</p>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-google"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="module" src="../js/script.js"></script>
+    <script type="module" src="../js/index.js"></script>
+</body>
+
+</html>

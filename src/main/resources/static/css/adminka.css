@@ -1,0 +1,365 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.hello{
+    margin: 0 auto;
+    width: 350px;
+    height: auto;
+}
+.hello-text{
+    margin: 0 auto;
+    width: 550px;
+    height: auto;
+    text-align: center;
+}
+.hello-text-ahtung{
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 570px;
+    height: auto;
+    text-align: center;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+nav {
+    float: left;
+    width: 100px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    position: relative;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+nav ul li ul {
+    display: none;
+    background-color: #ddd;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 200px;
+}
+nav ul li:hover ul {
+    display: block;
+}
+nav ul
+
+#productForm {
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.productForm{
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#productForm div {
+    margin-bottom: 20px;
+}
+
+#productForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#productForm input[type="text"],
+#productForm textarea,
+#productForm input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+#productForm textarea {
+    resize: none;
+}
+
+#productForm button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#productForm button[type="submit"] {
+    background-color: #4caf50;
+}
+
+#productForm button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#productForm button[type="button"] {
+    background-color: #007bff;
+}
+
+#productForm button[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+#productForm small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+}
+
+@media (max-width: 520px) {
+    #productForm {
+        width: calc(100% - 40px);
+    }
+}
+
+#deleteProductForm button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    margin: 35px  auto 0;
+}
+
+#deleteProductForm button[type="submit"]:hover {
+
+    background-color: #cc0000;
+}
+.categoriesForm {
+    width: 300px;
+    margin: 35px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.categoriesForm h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.categoriesForm div {
+    margin-bottom: 10px;
+}
+
+.categoriesForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.categoriesForm input[type="text"],
+.categoriesForm select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.categoriesForm button[type="submit"],
+.categoriesForm button[type="button"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.categoriesForm button[type="submit"]:hover,
+.categoriesForm button[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+#addTextForm {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#addTextForm input[type="text"],
+#addTextForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+#addTextForm button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+#addTextForm button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+#editTextForm {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+#editTextForm {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#editTextForm input[type="text"],
+#editTextForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+
+#editTextForm button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+#editTextForm button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+#userListForm {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+#userListForm h2 {
+    text-align: center;
+}
+
+#userListForm div {
+    margin-bottom: 10px;
+}
+
+#userListForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#userListForm select, #editUserBtn {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#editUserBtn {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#editUserBtn:hover {
+    background-color: #0056b3;
+}
+
+
+
+.database-table-background{
+    padding-top: 10px;
+    height: calc(100% - 10px);
+    padding-right: 300px;
+    padding-left: 300px;
+}
+
+.database-table table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.database-table th, td {
+    text-align: left;
+    padding: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    font-style: normal;
+    color: #E8E9F3;
+    border-right: 1px solid #7A7A7A;
+    border-left: 1px solid #7A7A7A;
+    text-align: center
+}
+.database-table th {
+    background-color: transparent;
+    border-right: none;
+    border-left: none;
+}
+.database-table td{
+    background-color: #252525;
+    border-top: 1px solid #7A7A7A;
+    border-bottom: 1px solid #7A7A7A;
+}
+
+.fa-solid.fa-sort-up{
+    font-size: 26px;
+    color: #131313;
+}
+
+.fa-solid.fa-sort-down{
+    font-size: 26px;
+    color: #131313;
+}

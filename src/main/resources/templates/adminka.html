@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню</title>
+    <link rel="stylesheet" th:href="@{/css/adminka.css}">
+</head>
+<body>
+    <header>
+        <h1>Адмін панель</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Товари</a>
+                <ul>
+                    <li><a href="/create">Додати товар</a></li>
+                    <li><a id="categories">Категорії</a></li>
+                </ul>
+            </li>
+            <li>
+            <li><a id="users" style="cursor: pointer;">Користувачі</a></li>
+            </li>
+        </ul>
+    </nav>
+    <main id="main">
+        <h1 class="hello">Вітаю в адмін панелі!</h1>
+    </main>
+    <script type="module" src="../js/adminka.js"></script>
+</body>
+</html>
