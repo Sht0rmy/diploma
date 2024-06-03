@@ -30,6 +30,12 @@ public class User implements UserDetails {
     private String password;
     @Column(name="active")
     private boolean active;
+    @OneToOne
+    private Image avatar;
+    private String name;
+    private String delivery;
+    private String phone;
+
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Product> basket = new ArrayList<>();
     @ManyToMany(fetch = FetchType.EAGER)

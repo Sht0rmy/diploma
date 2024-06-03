@@ -8,7 +8,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+/**
+ * Created by Sh1chiro on 09.05.2024.
+ * <p>
+ * When I wrote this code, only god and
+ * I knew how it worked.
+ * Now, only god knows it!
+ *
+ * @author Sh1chiro
+ */
 
 @Service
 @Slf4j

@@ -19,10 +19,16 @@ fetch(`/api/product/get-by-type?id=${categoryId}`, {
                 <img src="/images/${product.previewImage}" alt="Product 1">
                 <div class="price-tag">${product.price} грн</div>
                 <h3 class="product-title" id="product-${product.id}">${product.title}</h3>
+                <div class="rating" id="rating-${product.id}"></div>
             `
 
             productBlock.append(productElement)
             count--
+
+            const ratingElement = document.getElementById(`rating-${product.id}`)
+            const filledStars = '★'.repeat(product.rating)
+            const emptyStars = '☆'.repeat(5 - product.rating)
+            ratingElement.innerHTML = filledStars + emptyStars
 
             document.getElementById(`product-${product.id}`).addEventListener('click', () => {
                 window.location.href = `/product/${product.id}`

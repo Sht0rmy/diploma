@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/product")
@@ -47,12 +49,13 @@ public class ProductAPIController {
 
     @GetMapping("/get-product")
     public ProductDTO getProduct(@RequestParam Long id){
-        System.out.println(id);
         Product product = productService.getById(id);
         ProductDTO productDTO = new ProductDTO();
         if(product != null){
             productDTO = ConverterDTO.productToDTO(product);
-            System.out.println(productDTO);
+
+            product.setViews(product.getViews() + 1);
+            productService.save(product);
         }
         return productDTO;
     }
@@ -66,5 +69,25 @@ public class ProductAPIController {
         }
 
         return response;
+    }
+
+    @GetMapping("/advanced-search")
+    public List<ProductDTO> advancedSearch(@RequestParam String name, @RequestParam int minPrice, @RequestParam int maxPrice,
+                                           @RequestParam String category){
+        List<ProductDTO> productDTOS = new ArrayList<>();
+
+        List<Product> products = productService.getByProductType(productTypeService.getByType(category));
+        if(!products.isEmpty()){
+            List<Product> productToResponse = new ArrayList<>();
+            for (Product product : products) {
+                if(product.getTitle().contains(name) && product.getPrice() >= minPrice && product.getPrice() <= maxPrice){
+                    productToResponse.add(product);
+                }
+            }
+            if(!productToResponse.isEmpty())
+                productDTOS = ConverterDTO.productListToDTO(productToResponse);
+        }
+
+        return productDTOS;
     }
  }

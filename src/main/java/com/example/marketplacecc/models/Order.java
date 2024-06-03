@@ -24,7 +24,8 @@ public class Order {
     private List<Product> products = new ArrayList<>();
     private String name;
     private String phone;
-    private String city;
+    private String email;
+    private String delivery;
     private LocalDateTime dateOfCreated;
 
     @PrePersist

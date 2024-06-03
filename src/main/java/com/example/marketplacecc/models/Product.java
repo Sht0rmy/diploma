@@ -31,7 +31,14 @@ public class Product {
     @OneToOne(cascade = CascadeType.ALL)
     private Image previewImage;
     private LocalDateTime dateOfCreated;
-
+    private int views = 0;
+    private int saves = 0;
+    private int baskets = 0;
+    @OneToMany
+    private List<Review> reviews = new ArrayList<>();
+    private int rating = 0;
+    @OneToMany
+    private List<Question> questions = new ArrayList<>();
     @PrePersist
     private void init(){
         dateOfCreated = LocalDateTime.now();
@@ -49,5 +56,18 @@ public class Product {
                 ", previewImage=" + previewImage +
                 ", dateOfCreated=" + dateOfCreated +
                 '}';
+    }
+
+    public void updateRating(){
+        if(reviews.size() > 1){
+            int average = 0;
+            int count = 0;
+            for (Review review : reviews) {
+                count++;
+                average += review.getRating();
+            }
+
+            rating = average/count;
+        }
     }
 }

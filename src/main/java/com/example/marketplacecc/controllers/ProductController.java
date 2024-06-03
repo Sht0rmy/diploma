@@ -26,6 +26,9 @@ public class ProductController {
     public String getProduct(@PathVariable Long id, Model model){
         Product product = productService.getById(id);
         if(product != null) {
+            product.setViews(product.getViews() + 1);
+            productService.save(product);
+
             model.addAttribute("product", ConverterDTO.productToDTO(product));
             return "product";
         }else
@@ -40,5 +43,10 @@ public class ProductController {
     @GetMapping("/wishlist")
     public String getWish(){
         return "wishlist";
+    }
+
+    @GetMapping("/advanced-search")
+    public String advancedSearch(){
+        return "advancedSearch";
     }
 }

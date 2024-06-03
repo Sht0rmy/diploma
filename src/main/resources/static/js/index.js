@@ -11,9 +11,9 @@ fetch('/api/get-categories', {
             const categoryBlock = document.createElement('div')
             categoryBlock.className = 'category'
             categoryBlock.innerHTML = `
-                <img src="/img/empty.jpg" alt="Category 1">
+                <img src="/images/${category.image.id}" alt="Category 1">
                 <div class="category-info">
-                    <h3 id='category-${category.id}'>${category.type}</h3>
+                    <h3 id='category-${category.id}' style="color: #ef0000">${category.type}</h3>
                 </div>
             `
             categoriesBlock.appendChild(categoryBlock)
@@ -116,3 +116,7 @@ function createProductBlock(id){
 
     return document.getElementById(`product-cards-${id}`)
 }
+
+document.getElementById("advanced-search").addEventListener('click', () => {
+    window.location.href = `/advanced-search`
+})

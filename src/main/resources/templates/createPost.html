@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Меню</title>
+  <link rel="stylesheet" th:href="@{/css/adminka.css}">
+</head>
+<body>
+<header>
+  <h1>Адмін панель</h1>
+</header>
+<nav>
+  <ul>
+    <li>
+      <a href="#">Товари</a>
+      <ul>
+        <li><a href="/create" style="cursor: pointer">Додати товар</a></li>
+        <li><a id="categories" style="cursor: pointer">Категорії</a></li>
+        <li><a id="stats" style="cursor: pointer">Статистика</a></li></ul>
+    </li>
+    <li>
+    <li><a id="users" style="cursor: pointer">Користувачі</a></li>
+    <li><a id="orders" style="cursor: pointer">Замовлення</a></li>
+    <li><a href="/create-post" style="cursor: pointer">Створити пост</a></li>
+    </li>
+  </ul>
+</nav>
+<main id="main">
+  <form action="/create-post" method="post" enctype="multipart/form-data" id="productForm" class = "productForm">
+    <h2 style="align-items: center;">Форма для створення посту</h2>
+    <div>
+      <label for="text">Текст:</label>
+      <textarea id="text" name="text" rows="4" required></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="file1" class="form-label">Фото</label>
+      <input class="form-control" type="file" accept="image/*" id="file1" name="file1">
+    </div>
+    <div>
+      <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+      <button type="submit">Створити пост</button>
+    </div>
+  </form>
+</main>
+<script type="module" src="../js/adminka.js"></script>
+</body>
+</html>

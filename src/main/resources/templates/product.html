@@ -42,7 +42,7 @@
         <button><a class="basket" href="/basket">Оформити замовлення</a></button>
     </div>
     <div class="full-width-image">
-        <img src="/img/empty.jpg" alt="Фото">
+        <img src="/img/banner.jpg" alt="Фото">
         <p class="name-full-window">Відеокарта MSI GeForce RTX3060 12Gb <br> VENTUS 2X OC (RTX 3060 VENTUS 2X 12G OC)</p>
     </div>
     <div class="product-container">
@@ -56,6 +56,7 @@
         </div>
         <div class="product-details">
             <h2 th:text="${product.title}"></h2>
+            <div class="rating" th:utext="${'★'.repeat(product.rating) + '☆'.repeat(5 - product.rating)}">★★★★★</div>
             <div class="product-guaranty">Гарантія: 12 місяців</div>
             <div class="product-title-big"><span style="font-size:15px">Ціна <br></span><span th:text="${product.price}"></span> грн</div>
             <div class="by-btn-product"><button class="by-on-produst" id="buy-button">Купити</button></div>
@@ -71,12 +72,36 @@
                 </div>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const rating = [[${product.rating}]]
+                const filledStars = '★'.repeat(rating)
+                const emptyStars = '☆'.repeat(5 - rating)
+                document.querySelector('.rating').innerHTML = filledStars + emptyStars
+            })
+        </script>
     </div>
     <div class="product-description">
         <h2>Опис</h2>
         <div class="product-descr">
             <p th:text="${product.description}">опис товару</p>
         </div>
+    </div>
+
+    <div class="reviews-container">
+        <h2>Відгуки</h2>
+        <div class="reviews-list" id="reviews-list">
+
+        </div>
+        <button id="new-review-button">Додати відгук</button>
+    </div>
+
+    <div class="qa-container">
+        <h2>Питання та відповіді</h2>
+        <div class="qa-list" id="qa-list">
+
+        </div>
+        <button id="new-qa-button">Задати питання</button>
     </div>
 
     <div class="recommended-products">

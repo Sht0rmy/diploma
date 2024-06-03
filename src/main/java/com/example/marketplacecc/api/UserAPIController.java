@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 @RestController
 @RequestMapping("/api/user")
 @RequiredArgsConstructor
@@ -36,16 +38,20 @@ public class UserAPIController {
 
     @GetMapping("/get-me")
     public UserDTO getMe(@AuthenticationPrincipal User user){
-        return ConverterDTO.userToDTO(user);
+        user = userService.getUserById(user.getId());
+        UserDTO userDTO = ConverterDTO.userToDTO(user);
+        return userDTO;
     }
 
     @GetMapping("/get-my-wish")
     public List<ProductDTO> getMyWishList(@AuthenticationPrincipal User user){
+        user = userService.getUserById(user.getId());
         return ConverterDTO.productListToDTO(user.getWishList());
     }
 
     @GetMapping("/get-basket")
     public List<ProductDTO> getMyBasket(@AuthenticationPrincipal User user){
+        user = userService.getUserById(user.getId());
         return ConverterDTO.productListToDTO(user.getBasket());
     }
 
@@ -57,6 +63,10 @@ public class UserAPIController {
             if(product != null){
                 user.getWishList().add(product);
                 userService.save(user);
+
+                product.setSaves(product.getSaves() + 1);
+                productService.save(product);
+
                 return HttpStatus.OK;
             }
             return HttpStatus.NOT_FOUND;
@@ -72,6 +82,10 @@ public class UserAPIController {
             if(product != null){
                 user.getBasket().add(product);
                 userService.save(user);
+
+                product.setBaskets(product.getBaskets() + 1);
+                productService.save(product);
+
                 return HttpStatus.OK;
             }
             return HttpStatus.NOT_FOUND;

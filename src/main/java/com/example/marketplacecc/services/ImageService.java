@@ -2,6 +2,7 @@ package com.example.marketplacecc.services;
 
 import com.example.marketplacecc.models.Image;
 import com.example.marketplacecc.models.Product;
+import com.example.marketplacecc.models.User;
 import com.example.marketplacecc.repositories.ImageRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +11,15 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
-
+/**
+ * Created by Sh1chiro on 09.05.2024.
+ * <p>
+ * When I wrote this code, only god and
+ * I knew how it worked.
+ * Now, only god knows it!
+ *
+ * @author Sh1chiro
+ */
 
 @Service
 @Slf4j

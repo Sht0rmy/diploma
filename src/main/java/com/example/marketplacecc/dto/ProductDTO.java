@@ -1,5 +1,6 @@
 package com.example.marketplacecc.dto;
 
+import com.example.marketplacecc.models.Review;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,4 +22,9 @@ public class ProductDTO {
     private Long previewImage;
     private List<Long> images = new ArrayList<>();
     private LocalDateTime dateOfCreated;
+    private int views;
+    private int saves;
+    private int baskets;
+    private List<ReviewDTO> reviews = new ArrayList<>();
+    private int rating;
 }

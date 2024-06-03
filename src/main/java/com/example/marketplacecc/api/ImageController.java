@@ -1,7 +1,9 @@
 package com.example.marketplacecc.api;
 
 import com.example.marketplacecc.models.Image;
+import com.example.marketplacecc.models.Product;
 import com.example.marketplacecc.services.ImageService;
+import com.example.marketplacecc.services.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpStatus;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.ByteArrayInputStream;
+
+
 
 @RestController
 @RequiredArgsConstructor
@@ -29,5 +33,14 @@ public class ImageController {
                     .body(new InputStreamResource(new ByteArrayInputStream(image.getBytes())));
         }else
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("404");
+    }
+
+
+    private final ProductService productService;
+    @GetMapping("/test")
+    public void test(){
+        Product product = productService.getById(2L);
+        product.setPreviewImage(imageService.getById(15L));
+        productService.save(product);
     }
 }
